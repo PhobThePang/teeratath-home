@@ -11,7 +11,7 @@ class SpeechCommander:
 
         self.recognizer = sr.Recognizer()
 
-        self.cmd_vel_pub = rospy.Publisher('turtle1/cmd_vel', Twist, queue_size=10)
+        self.cmd_vel_pub = rospy.Publisher('/cmd_vel_mux/input/teleop', Twist, queue_size=10)
 
         rospy.Subscriber('speech_commands', String, self.speech_callback)
 
